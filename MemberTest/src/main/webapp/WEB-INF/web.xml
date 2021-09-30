@@ -9,6 +9,14 @@
 		<servlet-name>MainMember</servlet-name>
 		<servlet-class>com.controller.MainController</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>DeleteMember</servlet-name>
+		<servlet-class>com.controller.DeleteController</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>com.controller.LoginController</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>InsertMember</servlet-name>
 		<url-pattern>/member/insert</url-pattern>
@@ -16,6 +24,14 @@
 	<servlet-mapping>
 		<servlet-name>MainMember</servlet-name>
 		<url-pattern>/member/main</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteMember</servlet-name>
+		<url-pattern>/member/delete</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/member/login</url-pattern>
 	</servlet-mapping>
 	<!--  서블릿 E  -->
 </web-app>
