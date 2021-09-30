@@ -1,6 +1,8 @@
 package com.model.dto;
 
 import javax.servlet.http.HttpServletRequest;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class MemberBean {
 	private int memNo;
@@ -14,6 +16,12 @@ public class MemberBean {
 		this.memId = request.getParameter("memId");
 		this.memNm = request.getParameter("memNm");
 		this.memPw = request.getParameter("memPw");
+	}
+	
+	public MemberBean(ResultSet rs) throws SQLException {
+		this.memNo = rs.getInt("memNo");
+		this.memId = rs.getString("memId");
+		this.memNm = rs.getString("memNm");
 	}
 	
 	public MemberBean(int memNo, String memId, String memNm) {

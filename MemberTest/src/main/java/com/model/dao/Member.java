@@ -4,6 +4,7 @@ import com.core.DB;
 import com.model.dto.MemberBean;
 import java.sql.*;
 import org.mindrot.jbcrypt.*;
+import java.util.ArrayList;
 
 /**
  * 회원 추가, 삭제, 조회, 로그인
@@ -38,5 +39,32 @@ public class Member {
 		}
 		
 		return false;
+	}
+	
+	/**
+	 * 회원 목록 
+	 * 
+	 * @return ArrayList 
+	 */
+	public ArrayList<MemberBean> getMembers() {
+		ArrayList<MemberBean> list = new ArrayList<>();
+		
+		String sql = "SELECT * FROM member2";
+		try(Connection conn = DB.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			
+			ResultSet rs = pstmt.executeQuery();
+			// .next() -> 다음 투플이 있는 체크 true -> 다음 투플로 이동 
+			while(rs.next()) {
+				list.add(new MemberBean(rs));
+			}
+			
+			rs.close();
+		} catch (SQLException | ClassNotFoundException e) {
+			// 로그 기록 
+		}
+		
+		
+		return list;
 	}
 }

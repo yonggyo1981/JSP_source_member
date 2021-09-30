@@ -5,9 +5,17 @@
 		<servlet-name>InsertMember</servlet-name>
 		<servlet-class>com.controller.InsertMember</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>MainMember</servlet-name>
+		<servlet-class>com.controller.MainController</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>InsertMember</servlet-name>
 		<url-pattern>/member/insert</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MainMember</servlet-name>
+		<url-pattern>/member/main</url-pattern>
 	</servlet-mapping>
 	<!--  서블릿 E  -->
 </web-app>
