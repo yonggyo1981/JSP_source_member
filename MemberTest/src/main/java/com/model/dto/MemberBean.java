@@ -1,11 +1,20 @@
 package com.model.dto;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class MemberBean {
 	private int memNo;
 	private String memId;
+	private String memPw;
 	private String memNm;
 	
 	public MemberBean() {}
+	
+	public MemberBean(HttpServletRequest request) {
+		this.memId = request.getParameter("memId");
+		this.memNm = request.getParameter("memNm");
+		this.memPw = request.getParameter("memPw");
+	}
 	
 	public MemberBean(int memNo, String memId, String memNm) {
 		this.memNo = memNo;
@@ -35,5 +44,13 @@ public class MemberBean {
 	
 	public void setMemNm(String memNm) {
 		this.memNm = memNm;
-	}	
+	}
+	
+	public String getMemPw() {
+		return memPw;
+	}
+	
+	public void setMemPw(String memPw) {
+		this.memPw = memPw;
+	}
 }
