@@ -3,6 +3,7 @@ package com.model.dao;
 import com.core.DB;
 import com.model.dto.MemberBean;
 import java.sql.*;
+import org.mindrot.jbcrypt.*;
 
 /**
  * 회원 추가, 삭제, 조회, 로그인
@@ -19,7 +20,7 @@ public class Member {
 		if (member == null) 
 			return false;
 		
-		String memPw = member.getMemPw();
+		String memPw = BCrypt.hashpw(member.getMemPw(), BCrypt.gensalt(10));
 		
 		String sql = "CALL InsertMember(?, ?, ?)";
 		try (Connection conn = DB.getConnection();
