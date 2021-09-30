@@ -7,6 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.RequestDispatcher;
 import java.io.IOException;
 
+import com.model.dao.Member;
+import com.model.dto.MemberBean;
+
 public class InsertMember extends HttpServlet {
 	public static final long serialVersionUID = 1L;
 	
