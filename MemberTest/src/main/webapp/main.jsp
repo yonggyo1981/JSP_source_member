@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="java.util.ArrayList, com.model.dto.MemberBean" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.model.dto.MemberBean" %>
 <%
 	ArrayList<MemberBean> list = (ArrayList<MemberBean>)request.getAttribute("list");
 %>
